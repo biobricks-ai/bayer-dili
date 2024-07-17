@@ -1,2 +1,26 @@
 schema: '2.0'
-stages: {}
+stages:
+  process:
+    cmd: python stages/01_load.py
+    deps:
+    - path: downloads/MIE_multitask_model_data_20230601.xlsx
+      hash: md5
+      md5: 39db1d39ea8ff909309dac4e8137e965
+      size: 805359
+    - path: downloads/endpoint_names.xlsx
+      hash: md5
+      md5: 9ff8ee070c67da672807e75e65c2b954
+      size: 17145
+    - path: stages/01_load.py
+      hash: md5
+      md5: 6f78b361a3891103c5b35833636885cf
+      size: 1786
+    outs:
+    - path: brick/bayer_dili_data.parquet
+      hash: md5
+      md5: a97748313d0ff3c8edf3a3c78e2e3073
+      size: 1085747
+    - path: brick/bayer_dili_properties.parquet
+      hash: md5
+      md5: da0b3584b36a992d47e1473bbdf61ece
+      size: 2763
